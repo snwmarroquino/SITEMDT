@@ -1,0 +1,104 @@
+
+
+/* Importação da fonte exigida pelo professor */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,800');
+
+/* Reset básico e centralização do card na tela */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a2f56; /* Cor sólida escura para destacar o card, similar ao vídeo */
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+}
+
+/* Container principal do Card */
+.card-container {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 4px; /* Leve arredondamento para acabamento limpo */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Configuração da imagem de fundo */
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Bloco branco de conteúdo (O segredo do efeito está aqui) */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    /* Estado Inicial: Empurra o bloco para baixo, deixando apenas o título visível */
+    transform: translateY(calc(100% - 85px)); 
+    
+    /* Transição suave (Motion) */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efeito de subir ao passar o mouse no container */
+.card-container:hover .card-content {
+    transform: translateY(0);
+}
+
+/* Estilização dos elementos internos */
+.card-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-text {
+    font-size: 19px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: auto; /* Empurra o botão sempre para o fim */
+}
+
+/* Botão Read More */
+.card-button {
+    display: inline-block;
+    width: 140px;
+    padding: 10px 0;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: lowercase;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.card-button:hover {
+    background-color: #333333;
+}
